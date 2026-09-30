@@ -6,10 +6,10 @@ import { navigation } from "../data/content.js";
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const reduceMotion = useReducedMotion();
-  const isTutorPage = window.location.pathname.endsWith("/become-a-tutor.html");
-  const homeHref = (hash) => `${isTutorPage ? import.meta.env.BASE_URL : ""}${hash}`;
+  const isTutorPage = window.location.pathname.includes("become-a-tutor");
+  const homeHref = (hash) => `${isTutorPage ? (import.meta.env.BASE_URL.endsWith("/") ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`) : ""}${hash}`;
   const getNavigationHref = (href) => (
-    href.startsWith("#") ? homeHref(href) : `${import.meta.env.BASE_URL}${href}`
+    href.startsWith("#") ? homeHref(href) : `${import.meta.env.BASE_URL === "/" ? "/" : import.meta.env.BASE_URL}${href}`
   );
   const enrollmentHref = homeHref("#enrollment");
 

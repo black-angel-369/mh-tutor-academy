@@ -1,0 +1,6 @@
+{
+  "cleanUrls": true,
+  "rewrites": [
+    { "source": "/become-a-tutor", "destination": "/become-a-tutor.html" }
+  ]
+}

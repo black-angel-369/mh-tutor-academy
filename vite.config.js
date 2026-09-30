@@ -7,7 +7,7 @@ import { fileURLToPath } from "node:url";
 const projectRoot = fileURLToPath(new URL(".", import.meta.url));
 
 export default defineConfig({
-  base: "/mh-tutor-academy/",
+  base: process.env.VITE_BASE_PATH || "/",
   plugins: [react(), tailwindcss()],
   build: {
     rollupOptions: {
