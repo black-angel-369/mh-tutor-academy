@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://mh-tutor-academy.example/sitemap.xml
